@@ -62,7 +62,7 @@
 		background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro ao passar o mouse no link ativo */
 	} /* Fim da tag da Navbar da Página e seus atributos */
 
-	.centrodireita { 
+	.centrodireita {  /*Centro da tela */
 		width: 30%; /* Ocupa 25% da largura da tela */
 		height: 90vh; /* Ocupa 90% da altura da tela */
 		background-image: url('https://i.pinimg.com/originals/b3/10/9c/b3109c6ccfec37aee3f9d90e9f049238.gif'); /* Adicione a imagem de fundo que deseja */
@@ -259,6 +259,10 @@
 		color: #0866ff;
 		text-decoration: none;
 		font-weight: 700;
+		font-family: fantasy;
+	}
+	.texto2 {
+		color: #F7F9F9;
 		font-family: fantasy;
 	}
 	
