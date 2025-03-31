@@ -1,0 +1,93 @@
+/* Estilos para as seções */
+body {
+    font-family: fantasy;
+}
+.section {
+    padding: 60px 0;
+    min-height: 100vh;
+}
+
+#home {
+    background: url(https://i.pinimg.com/originals/fb/c6/f3/fbc6f31bd3b84159470b973aca7e0f97.gif) repeat;
+    background-size: cover; /* Garante que o fundo se ajuste ao tamanho da tela */
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+#expectativas {
+    background: 
+    url(https://i.pinimg.com/originals/44/c7/c1/44c7c1f3fbd68b2151c37af5f08198f1.gif) repeat, /* Primeira imagem de fundo */
+    url('URL_DA_SEGUNDA_IMAGEM.jpg') no-repeat center center; /* Segunda imagem de fundo */
+    background-size: 1920px 1080px, cover; 
+    background-position: center; 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
+}
+
+#contato {
+    background: 
+    url(https://i.pinimg.com/originals/17/09/1b/17091ba8a14ac0b355173983bcd77dff.gif) repeat, /* Primeira imagem de fundo */
+    url('URL_DA_SEGUNDA_IMAGEM.jpg') no-repeat center center; /* Segunda imagem de fundo */
+    background-size: 1920px 1080px, cover; 
+    background-position: center; /* Centraliza ambas as imagens */
+    color: white; /* Altera a cor do texto  */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
+}
+
+#habilidades {
+    background: 
+    url(https://i.pinimg.com/originals/01/a1/9a/01a19a1f98cbec47dea16dde965036d3.gif) repeat, /* Primeira imagem de fundo */
+    url('URL_DA_SEGUNDA_IMAGEM.jpg') no-repeat center center; /* Segunda imagem de fundo */
+    background-size: 1920px 1080px, cover; /* Define o tamanho da primeira imagem e a segunda imagem cobre toda a tela */
+    background-position: center; /* Centraliza ambas as imagens */
+    color: white; /* Altera a cor do texto  */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
+}
+
+/* Estilos da navegação */
+.navbar {
+    z-index: 1000;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    margin-right: 20px;
+}
+
+/* Efeito de rolagem suave */
+html {
+    scroll-behavior: smooth;
+}
+
+.texto1 {
+    color: rgb(213, 0, 50);
+}
+.texto-formatado {
+    font-size: 1.1rem; /* Ajusta o tamanho da fonte */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    text-align: justify; /* Justifica o texto */
+    max-width: 800px; /* largura máxima */
+    margin: 20px auto; /* Centraliza*/
+    padding: 10px; /* interno */
+}
+
+.texto-formatado br {
+    margin-bottom: 15px; /* Adiciona um espaço extra nas quebras de linha */
+}
+/* Estilos para a foto de perfil */
+.foto-perfil {
+    width: 30px; /* Tamanho pequeno para a imagem */
+    height: 30px; /* Mantém a imagem quadrada */
+    border-radius: 50%; /* Faz a imagem ficar circular */
+    margin-right: 10px; /* Adiciona um espaço entre a imagem e o texto */
+    vertical-align: middle; /* Alinha a imagem com o texto */
+}
+/* Estilos para a foto de perfil na navbar */
+.foto-perfil-navbar {
+    width: 30px; /* Tamanho pequeno para a imagem */
+    height: 30px; /* Mantém a imagem quadrada */
+    border-radius: 50%; /* Faz a imagem ficar circular */
+    margin-right: 10px; /* Adiciona um espaço entre a imagem e o texto */
+    vertical-align: middle; /* Alinha a imagem com o texto */
+}
+
