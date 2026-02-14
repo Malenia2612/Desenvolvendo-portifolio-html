@@ -1,271 +1,109 @@
-	nav {
-    	position: relative; /* Garante que a navbar fica posicionada corretamente */
-    	z-index: 10; /* Coloca a navbar acima de outros elementos */
-	}
-	
-	
-	body {
+/* Estilos para as seções */
+body {
+    font-family: Creepster, cursive;
+}
+.section {
+    padding: 60px 0;
+    min-height: 100vh;
+}
 
-		width: 100%;
-		height: 100%;
-		background: url(https://i.pinimg.com/originals/fb/c6/f3/fbc6f31bd3b84159470b973aca7e0f97.gif) repeat;
-		margin: 0;
-		align-content: 100%;
-		padding-left: 0;
-		background-position: right top;
-		background-size: cover;
-		overflow-x: hidden;
-	}
+#home {
+    background: url(https://i.pinimg.com/originals/fb/c6/f3/fbc6f31bd3b84159470b973aca7e0f97.gif) repeat;
+    background-size: cover; /* Garante que o fundo se ajuste ao tamanho da tela */
+    color: white; 
+    text-shadow: 
+        1px 1px 0px #000, /* Contorno superior e esquerdo */
+        -1px -1px 0px #000, /* Contorno inferior e direito */
+        1px -1px 0px #000, /* Contorno inferior e esquerdo */
+        -1px 1px 0px #000; /* Contorno superior e direito */
+}
 
-	.div1 { /* Começo da tag da Navbar da Página e seus atributos */
-		width: 100%; 
-		padding: 20px;
-		position: relative; 
-		top: 0;
-		left: 0;
-		z-index: 1; 
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: transparent; /* Fundo transparente para a navbar */
-		font-family: fantasy;
-	}
-	
-	.nav-pills .nav-link {
-		color: white; /* Cor branca para o texto */
-		background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para combinar com o fundo */
-		margin-bottom: 10px;
-		padding: 10px;
-		border-radius: 10px; /* Cantos arredondados */
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
-		transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave ao interagir */
-	}
-	
-	.nav-pills .nav-link:hover {
-		transform: scale(1.05); /* Efeito de zoom ao passar o mouse nos links */
-		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 22px rgba(0, 0, 0, 0.25); /* Aumento da sombra no hover */
-		background-color: rgba(0, 0, 0, 0.7); /* Fundo um pouco mais escuro ao passar o mouse */
-	}
-	
-	.nav-pills .nav-link.active {
-		color: white; /* Cor branca para o link ativo */
-		background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente, igual aos outros links */
-		border-radius: 10px; /* Cantos arredondados */
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15); /* Mesma sombra dos links normais */
-		transform: scale(1); /* Remove o efeito de transformação inicial */
-		transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Suavidade para transições */
-	}
-	
-	.nav-pills .nav-link.active:hover {
-		transform: scale(1.05); /* Mesmo efeito de zoom ao passar o mouse no link ativo */
-		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 22px rgba(0, 0, 0, 0.25); /* Aumento da sombra no hover do link ativo */
-		background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro ao passar o mouse no link ativo */
-	} /* Fim da tag da Navbar da Página e seus atributos */
+#expectativas {
+    background: 
+    url(https://i.pinimg.com/originals/44/c7/c1/44c7c1f3fbd68b2151c37af5f08198f1.gif) repeat, /* Primeira imagem de fundo */
+    url('URL_DA_SEGUNDA_IMAGEM.jpg') no-repeat center center; /* Segunda imagem de fundo */
+    background-size: 1920px 1080px, cover; 
+    background-position: center; 
+    color: white; 
+    text-shadow: 
+        1px 1px 0px #000, /* Contorno superior e esquerdo */
+        -1px -1px 0px #000, /* Contorno inferior e direito */
+        1px -1px 0px #000, /* Contorno inferior e esquerdo */
+        -1px 1px 0px #000; /* Contorno superior e direito */
+}
 
-	.centrodireita {  /*Centro da tela */
-		width: 30%; /* Ocupa 25% da largura da tela */
-		height: 90vh; /* Ocupa 90% da altura da tela */
-		background-image: url('https://i.pinimg.com/originals/b3/10/9c/b3109c6ccfec37aee3f9d90e9f049238.gif'); /* Adicione a imagem de fundo que deseja */
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover; /* A imagem se ajusta para cobrir toda a área da div */
-		color: white;
-		padding: 20px;
-		margin: 20px;
-		position: absolute;
-		top: 55%;
-		left: 50%; /* Alinha no meio da tela */
-		transform: translate(-50%, -50%); /* Centraliza tanto vertical quanto horizontalmente */
-		z-index: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 15px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s ease-in-out;
-		overflow: hidden; /* Evita que o conteúdo estoure da área da div */
-		font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;;
-		color: #F7F9F9;
-		margin: auto;
-		font-size: 16px;
-	}
-	
-	/* Efeito de zoom ao passar o mouse */
-	.centrodireita:hover {
-		transform: scale(1.05) translate(-50%, -50%); /* Mantém o zoom centralizado e evita que desça */
-		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
-	}
-	
-	/* Ajustes para telas menores */
-	@media (max-width: 1024px) {
-	.centrodireita {
-		width: 35%; /* Aumenta a largura em telas menores */
-		height: 50vh; /* Reduz a altura para manter a proporção */
-		}
-	}
-	
-	@media (max-width: 768px) {
-	.centrodireita {
-		width: 50%; /* Ocupa mais espaço da largura em telas médias */
-		height: 45vh;
-		}
-	}
-	
-	@media (max-width: 480px) {
-	.centrodireita {
-		width: 70%; /* Ocupa 70% da largura em telas pequenas */
-		height: 40vh;
-		}
-	}
-	
+#contato {
+    background: 
+    url(https://i.pinimg.com/originals/17/09/1b/17091ba8a14ac0b355173983bcd77dff.gif) repeat, /* Primeira imagem de fundo */
+    url('URL_DA_SEGUNDA_IMAGEM.jpg') no-repeat center center; /* Segunda imagem de fundo */
+    background-size: 1920px 1080px, cover; 
+    background-position: center; /* Centraliza ambas as imagens */
+    color: white; /* Altera a cor do texto  */
+    text-shadow: 
+        1px 1px 0px #000, /* Contorno superior e esquerdo */
+        -1px -1px 0px #000, /* Contorno inferior e direito */
+        1px -1px 0px #000, /* Contorno inferior e esquerdo */
+        -1px 1px 0px #000; /* Contorno superior e direito */
+}
 
-	.direita { /* Inicio Classe da div alinhada a direita com efeito */
-		width: 35%; /* Ocupa 25% da largura da tela */
-		height: 90vh; /* Ocupa 100% da altura da tela */
-		background-image: url('https://i.pinimg.com/originals/fa/de/06/fade06fdb98c309859796fb0e764ab0d.gif');
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover; /* A imagem se ajusta para cobrir toda a área da div */
-		color: white;
-		padding: 20px;
-		margin: 20px;
-		position: absolute;
-		top: 50%;
-		right: 0;
-		transform: translateY(-50%);
-		z-index: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 15px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s ease-in-out;
-		overflow: hidden; /* Evita que o conteúdo estoure da área da div */
-		font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;;
-		color: #F7F9F9;
-		margin: auto;
-		font-size: 16px;
-	}
-	
-	/* Efeito de zoom ao passar o mouse */
-	.direita:hover {
-		transform: scale(1.05) translateY(-50%); /* Mantém o zoom centralizado e evita que desça */
-		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
-	}
-	
-	/* Ajustes para telas menores */
-	@media (max-width: 1024px) {
-	.direita {
-		width: 35%; /* Aumenta a largura em telas menores */
-		height: 50vh; /* Reduz a altura para manter a proporção */
-		}
-	}
-	
-	@media (max-width: 768px) {
-	.direita {
-		width: 50%; /* Ocupa mais espaço da largura em telas médias */
-		height: 45vh;
-		}
-	}
-	
-	@media (max-width: 480px) {
-	.direita {
-		width: 70%; /* Ocupa 70% da largura em telas pequenas */
-		height: 40vh;
-		}
-	} /* Fim Classe da div alinhada a direita com efeito */
-	
+#habilidades {
+    background: 
+    url(https://i.pinimg.com/originals/01/a1/9a/01a19a1f98cbec47dea16dde965036d3.gif) repeat, /* Primeira imagem de fundo */
+    url('URL_DA_SEGUNDA_IMAGEM.jpg') no-repeat center center; /* Segunda imagem de fundo */
+    background-size: 1920px 1080px, cover; /* Define o tamanho da primeira imagem e a segunda imagem cobre toda a tela */
+    background-position: center; /* Centraliza ambas as imagens */
+    color: rgb(255, 255, 255); /* Altera a cor do texto  */
+    text-shadow: 
+        1px 1px 0px #000, /* Contorno superior e esquerdo */
+        -1px -1px 0px #000, /* Contorno inferior e direito */
+        1px -1px 0px #000, /* Contorno inferior e esquerdo */
+        -1px 1px 0px #000; /* Contorno superior e direito */
+}
 
-	.caixa-esquerda { /* Inicio Classe da div alinhada a esquerda com efeito */
-		width: 35%; /* Ocupa 25% da largura da tela */
-		height: 90vh; /* Ocupa 100% da altura da tela */
-		background-image: url('https://i.pinimg.com/originals/43/72/e9/4372e97c2d18812b45c3d2162fae96f0.gif');
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover; /* A imagem se ajusta para cobrir toda a área da div */
-		color: white;
-		padding: 20px;
-		margin: 20px;
-		position: absolute;
-		top: 50%;
-		left: 0; /* Alinha para a esquerda */
-		transform: translateY(-50%);
-		z-index: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 15px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s ease-in-out;
-		overflow: hidden; /* Evita que o conteúdo estoure da área da div */
-		font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;;
-		color: #F7F9F9;
-		margin: auto;
-		font-size: 16px;
-	}
-	
-	/* Efeito de zoom ao passar o mouse */
-	.caixa-esquerda:hover {
-		transform: scale(1.05) translateY(-50%); /* Mantém o zoom centralizado e evita que desça */
-		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
-	}
-	
-	/* Ajustes para telas menores */
-	@media (max-width: 1024px) {
-	.caixa-esquerda {
-		width: 35%; /* Aumenta a largura em telas menores */
-		height: 50vh; /* Reduz a altura para manter a proporção */
-		}
-	}
-	
-	@media (max-width: 768px) {
-	.caixa-esquerda {
-		width: 50%; /* Ocupa mais espaço da largura em telas médias */
-		height: 45vh;
-		}
-	}
-	
-	@media (max-width: 480px) {
-	.caixa-esquerda {
-		width: 70%; /* Ocupa 70% da largura em telas pequenas */
-		height: 40vh;
-		}
-	} /* Fim Classe da div alinhada a direita com efeito */
-	
-	.centro { /* Classe para texto da home page */
-		background-position: center;
-		color: white;
-		top: 15%;
-		padding: 20px;
-		position: absolute;
-		left: 50%; /* Alinha no meio da tela */
-		transform: translate(-50%, -50%); /* Centraliza tanto vertical quanto horizontalmente */
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 15px;
-		overflow: hidden; /* Evita que o conteúdo estoure da área da div */
-		font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;;
-		color: #F7F9F9;
-		margin: auto;
-		font-size: 18px;
-	}
+/* Estilos da navegação */
+.navbar {
+    z-index: 1000;
+}
 
-	.texto {
-		color: #0866ff;
-		text-decoration: none;
-		font-weight: 700;
-		font-family: fantasy;
-	}
-	.texto2 {
-		color: #F7F9F9;
-		font-family: fantasy;
-	}
-	
+.nav-link {
+    font-size: 1.1rem;
+    margin-right: 20px;
+}
 
+/* Efeito de rolagem suave */
+html {
+    scroll-behavior: smooth;
+}
 
+.texto1 {
+    color: rgb(213, 0, 50);
+}
+.texto-formatado {
+    font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    text-align: center; /* Justifica o texto */
+    max-width: 800px; /* largura máxima */
+    margin: 20px auto; /* Centraliza*/
+    padding: 10px; /* interno */
+}
+
+.texto-formatado br {
+    margin-bottom: 15px; /* Adiciona um espaço extra nas quebras de linha */
+}
+/* Estilos para a foto de perfil */
+.foto-perfil {
+    width: 30px; /* Tamanho pequeno para a imagem */
+    height: 30px; /* Mantém a imagem quadrada */
+    border-radius: 50%; /* Faz a imagem ficar circular */
+    margin-right: 10px; /* Adiciona um espaço entre a imagem e o texto */
+    vertical-align: middle; /* Alinha a imagem com o texto */
+}
+/* Estilos para a foto de perfil na navbar */
+.foto-perfil-navbar {
+    width: 30px; /* Tamanho pequeno para a imagem */
+    height: 30px; /* Mantém a imagem quadrada */
+    border-radius: 50%; /* Faz a imagem ficar circular */
+    margin-right: 10px; /* Adiciona um espaço entre a imagem e o texto */
+    vertical-align: middle; /* Alinha a imagem com o texto */
+}
 
