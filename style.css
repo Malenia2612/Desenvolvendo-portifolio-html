@@ -1,21 +1,41 @@
 /* Estilos para as seções */
 body {
-    font-family: Creepster, cursive;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 .section {
     padding: 60px 0;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+    max-width: 900px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.content-container.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #home {
     background: url(https://i.pinimg.com/originals/fb/c6/f3/fbc6f31bd3b84159470b973aca7e0f97.gif) repeat;
     background-size: cover; /* Garante que o fundo se ajuste ao tamanho da tela */
-    color: white; 
-    text-shadow: 
-        1px 1px 0px #000, /* Contorno superior e esquerdo */
-        -1px -1px 0px #000, /* Contorno inferior e direito */
-        1px -1px 0px #000, /* Contorno inferior e esquerdo */
-        -1px 1px 0px #000; /* Contorno superior e direito */
+    color: #000; 
 }
 
 #expectativas {
@@ -24,12 +44,7 @@ body {
     url('URL_DA_SEGUNDA_IMAGEM.jpg') no-repeat center center; /* Segunda imagem de fundo */
     background-size: 1920px 1080px, cover; 
     background-position: center; 
-    color: white; 
-    text-shadow: 
-        1px 1px 0px #000, /* Contorno superior e esquerdo */
-        -1px -1px 0px #000, /* Contorno inferior e direito */
-        1px -1px 0px #000, /* Contorno inferior e esquerdo */
-        -1px 1px 0px #000; /* Contorno superior e direito */
+    color: #333; 
 }
 
 #contato {
@@ -38,12 +53,7 @@ body {
     url('URL_DA_SEGUNDA_IMAGEM.jpg') no-repeat center center; /* Segunda imagem de fundo */
     background-size: 1920px 1080px, cover; 
     background-position: center; /* Centraliza ambas as imagens */
-    color: white; /* Altera a cor do texto  */
-    text-shadow: 
-        1px 1px 0px #000, /* Contorno superior e esquerdo */
-        -1px -1px 0px #000, /* Contorno inferior e direito */
-        1px -1px 0px #000, /* Contorno inferior e esquerdo */
-        -1px 1px 0px #000; /* Contorno superior e direito */
+    color: #000; /* Altera a cor do texto  */
 }
 
 #habilidades {
@@ -52,12 +62,7 @@ body {
     url('URL_DA_SEGUNDA_IMAGEM.jpg') no-repeat center center; /* Segunda imagem de fundo */
     background-size: 1920px 1080px, cover; /* Define o tamanho da primeira imagem e a segunda imagem cobre toda a tela */
     background-position: center; /* Centraliza ambas as imagens */
-    color: rgb(255, 255, 255); /* Altera a cor do texto  */
-    text-shadow: 
-        1px 1px 0px #000, /* Contorno superior e esquerdo */
-        -1px -1px 0px #000, /* Contorno inferior e direito */
-        1px -1px 0px #000, /* Contorno inferior e esquerdo */
-        -1px 1px 0px #000; /* Contorno superior e direito */
+    color: #000; /* Altera a cor do texto  */
 }
 
 /* Estilos da navegação */
@@ -79,7 +84,7 @@ html {
     color: rgb(213, 0, 50);
 }
 .texto-formatado {
-    font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+    font-size: 1.4rem; /* Ajusta o tamanho da fonte */
     line-height: 1.6; /* Aumenta o espaçamento entre linhas */
     text-align: center; /* Justifica o texto */
     max-width: 800px; /* largura máxima */
@@ -90,7 +95,53 @@ html {
 .texto-formatado br {
     margin-bottom: 15px; /* Adiciona um espaço extra nas quebras de linha */
 }
-/* Estilos para a foto de perfil */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+h1.animate-heading {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+h2 {
+    font-size: 2rem;
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+h2.animate-heading {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.texto {
+    color: #000;
+}
+
+.texto2 {
+    color: #000;
+}
+
 .foto-perfil {
     width: 30px; /* Tamanho pequeno para a imagem */
     height: 30px; /* Mantém a imagem quadrada */
@@ -107,3 +158,244 @@ html {
     vertical-align: middle; /* Alinha a imagem com o texto */
 }
 
+/* Backgrounds for separate pages */
+.contato-bg {
+    background: 
+    url(https://i.pinimg.com/originals/17/09/1b/17091ba8a14ac0b355173983bcd77dff.gif) repeat;
+    background-size: 1920px 1080px, cover; 
+    background-position: center;
+    color: #000;
+    min-height: 100vh;
+}
+
+.expectativas-bg {
+    background: 
+    url(https://i.pinimg.com/originals/44/c7/c1/44c7c1f3fbd68b2151c37af5f08198f1.gif) repeat;
+    background-size: 1920px 1080px, cover; 
+    background-position: center; 
+    color: #000;
+    min-height: 100vh;
+}
+
+.habilidades-bg {
+    background: 
+    url(https://i.pinimg.com/originals/01/a1/9a/01a19a1f98cbec47dea16dde965036d3.gif) repeat;
+    background-size: 1920px 1080px, cover;
+    background-position: center;
+    color: #000;
+    min-height: 100vh;
+}
+
+.page-content {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 50px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.page-content.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.texto {
+    font-size: 1.1rem;
+    color: #000;
+    margin: 10px 0;
+}
+
+.texto strong {
+    color: #1c1c1c;
+    font-weight: 700;
+}
+
+.texto a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.texto a:hover {
+    text-decoration: underline;
+}
+
+.page-content.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Ba� 3D estilo */
+.bau-wrapper { perspective: 1200px; margin: 30px auto; width: 300px; }
+.bau-3d { width: 300px; height: 180px; position: relative; cursor: pointer; transform-style: preserve-3d; }
+.bau-corpo { width: 100%; height: 100%; background: linear-gradient(135deg, #8B4513 0%, #654321 50%, #8B4513 100%); border-radius: 0 0 60px 60px; position: relative; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset -5px 5px 15px rgba(0, 0, 0, 0.5), inset 5px -5px 15px rgba(255, 255, 255, 0.1); border: 4px solid #3a2415; }
+.bau-corpo::before { content: ''; position: absolute; width: 100%; height: 100%; background: repeating-linear-gradient(90deg, transparent 0px, transparent 15px, rgba(0, 0, 0, 0.3) 15px, rgba(0, 0, 0, 0.3) 17px); border-radius: 0 0 60px 60px; }
+.bau-tampa { position: absolute; width: 100%; height: 60px; top: -60px; left: 0; background: linear-gradient(180deg, #A0826D 0%, #8B7355 50%, #654321 100%); border-radius: 50% 50% 0 0; border: 4px solid #3a2415; transform-origin: top center; transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), inset 0 2px 5px rgba(255, 255, 255, 0.2); }
+.bau-fecho { position: absolute; width: 50px; height: 30px; background: radial-gradient(circle at 30% 30%, #FFD700, #DAA520); border-radius: 50%; left: 50%; top: -25px; transform: translateX(-50%); box-shadow: 0 0 10px #FFD700, 0 0 20px rgba(255, 215, 0, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.3); border: 2px solid #B8860B; }
+.bau-3d.aberto .bau-tampa { transform: rotateX(-170deg); }
+.bau-dentro { position: absolute; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.4s ease-in-out 0.3s; padding: 20px; }
+.bau-3d.aberto .bau-dentro { opacity: 1; }
+.ouro-moeda { width: 50px; height: 50px; background: radial-gradient(circle at 30% 30%, #FFD700, #FFA500); border-radius: 50%; animation: girar 3s linear infinite; box-shadow: 0 0 15px #FFD700; margin: 10px 0; }
+@keyframes girar { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
+
+/* Container moderno para seções */
+.skills-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    margin: 0 auto;
+}
+
+.skills-container.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #FFD700; /* Dourado para destacar */
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.skills-container.animate h2 {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.skills-container p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Baú flutuante no canto superior direito */
+.bau-fixo {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 1000;
+    animation: balanco 2s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.bau-fixo.visivel {
+    opacity: 1;
+}
+
+@keyframes balanco {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+/* Baú 3D estilo */
+.bau-wrapper-fixo { perspective: 1200px; width: 150px; height: 100px; }
+.bau-3d-fixo { width: 150px; height: 100px; position: relative; cursor: pointer; transform-style: preserve-3d; }
+.bau-corpo-fixo { width: 100%; height: 100%; background: linear-gradient(135deg, #8B4513 0%, #654321 50%, #8B4513 100%); border-radius: 0 0 40px 40px; position: relative; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8), inset -3px 3px 10px rgba(0, 0, 0, 0.5), inset 3px -3px 10px rgba(255, 255, 255, 0.1); border: 3px solid #3a2415; }
+.bau-corpo-fixo::before { content: ''; position: absolute; width: 100%; height: 100%; background: repeating-linear-gradient(90deg, transparent 0px, transparent 10px, rgba(0, 0, 0, 0.3) 10px, rgba(0, 0, 0, 0.3) 12px); border-radius: 0 0 40px 40px; }
+.bau-tampa-fixo { position: absolute; width: 100%; height: 40px; top: -40px; left: 0; background: linear-gradient(180deg, #A0826D 0%, #8B7355 50%, #654321 100%); border-radius: 30px 30px 0 0; border: 3px solid #3a2415; transform-origin: top center; transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6), inset 0 1px 3px rgba(255, 255, 255, 0.2); }
+.bau-fecho-fixo { position: absolute; width: 30px; height: 20px; background: radial-gradient(circle at 30% 30%, #FFD700, #DAA520); border-radius: 50%; left: 50%; top: -15px; transform: translateX(-50%); box-shadow: 0 0 5px #FFD700, 0 0 10px rgba(255, 215, 0, 0.5), inset -1px -1px 3px rgba(0, 0, 0, 0.3); border: 1px solid #B8860B; }
+.bau-3d-fixo.aberto .bau-tampa-fixo { transform: rotateX(-170deg); }
+.bau-dentro-fixo { position: absolute; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.4s ease-in-out 0.3s; padding: 10px; }
+.bau-3d-fixo.aberto .bau-dentro-fixo { opacity: 1; }
+
+/* Boneco dentro do baú */
+.boneco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: aceno 1s ease-in-out infinite;
+}
+
+.cabeca {
+    width: 30px;
+    height: 30px;
+    background: #FFD700;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.corpo {
+    width: 20px;
+    height: 40px;
+    background: #8B4513;
+    position: relative;
+}
+
+.braco-esquerdo {
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    background: #FFD700;
+    left: -10px;
+    top: 10px;
+    transform-origin: right center;
+    animation: aceno-braco 1s ease-in-out infinite;
+}
+
+@keyframes aceno-braco {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-20deg); }
+}
+
+.pernas {
+    display: flex;
+    justify-content: space-between;
+    width: 30px;
+}
+
+.perna {
+    width: 8px;
+    height: 20px;
+    background: #654321;
+}
+
+/* Figuras geométricas */
+.figuras {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    pointer-events: none;
+}
+
+.estrela {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #FFD700;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.estrela:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.estrela:nth-child(2) { top: 30%; right: 10%; animation-delay: 1s; }
+.estrela:nth-child(3) { bottom: 20%; left: 30%; animation-delay: 2s; }
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+}
+
+@keyframes aceno {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
