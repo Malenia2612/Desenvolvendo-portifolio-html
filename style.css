@@ -300,6 +300,10 @@ p {
     opacity: 1;
 }
 
+.bau-fixo.aberto {
+    display: none;
+}
+
 @keyframes balanco {
     0%, 100% { transform: rotate(-5deg); }
     50% { transform: rotate(5deg); }
@@ -314,7 +318,7 @@ p {
 .bau-fecho-fixo { position: absolute; width: 30px; height: 20px; background: radial-gradient(circle at 30% 30%, #FFD700, #DAA520); border-radius: 50%; left: 50%; top: -15px; transform: translateX(-50%); box-shadow: 0 0 5px #FFD700, 0 0 10px rgba(255, 215, 0, 0.5), inset -1px -1px 3px rgba(0, 0, 0, 0.3); border: 1px solid #B8860B; }
 .bau-3d-fixo.aberto .bau-tampa-fixo { transform: rotateX(-170deg); }
 .bau-dentro-fixo { position: absolute; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.4s ease-in-out 0.3s; padding: 10px; }
-.bau-3d-fixo.aberto .bau-dentro-fixo { opacity: 1; }
+.bau-3d-fixo.aberto .bau-dentro-fixo { opacity: 0; pointer-events: none; }
 
 /* Boneco dentro do baú */
 .boneco {
@@ -398,4 +402,504 @@ p {
 @keyframes aceno {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
+}
+
+/* Bonequinho correndo com Java logo */
+.boneco-correndo {
+    position: fixed;
+    bottom: 50px;
+    left: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+    opacity: 0;
+}
+
+.boneco-correndo.ativo {
+    animation: correr 6s ease-in-out forwards;
+}
+
+@keyframes correr {
+    0% {
+        left: -100px;
+        opacity: 1;
+    }
+    100% {
+        left: calc(100vw + 100px);
+        opacity: 1;
+    }
+}
+
+/* Corpo do bonequinho correndo */
+.corpo-correndo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.cabeca-correndo {
+    width: 16px;
+    height: 16px;
+    background: #FFD700;
+    border-radius: 50%;
+    position: relative;
+}
+
+.cabeca-correndo::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+    left: 4px;
+    top: 5px;
+}
+
+.tronco-correndo {
+    width: 11px;
+    height: 13px;
+    background: #FF6B6B;
+    position: relative;
+}
+
+.braco-correndo-direito {
+    position: absolute;
+    width: 13px;
+    height: 3px;
+    background: #FFD700;
+    right: -8px;
+    top: 3px;
+    transform-origin: left center;
+    animation: braco-corre 0.3s ease-in-out infinite;
+}
+
+@keyframes braco-corre {
+    0%, 100% { transform: rotate(20deg); }
+    50% { transform: rotate(-20deg); }
+}
+
+.pernas-correndo {
+    display: flex;
+    gap: 4px;
+    height: 11px;
+}
+
+.perna-correndo {
+    width: 3px;
+    height: 100%;
+    background: #654321;
+    animation: perna-corre 0.3s ease-in-out infinite;
+}
+
+.perna-correndo:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+@keyframes perna-corre {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+}
+
+/* Java logo na mão */
+.java-logo {
+    width: 30px;
+    height: 30px;
+    background: url('https://img.icons8.com/?size=100&id=mQ01rhdaQzyT&format=png&color=000000') no-repeat center;
+    background-size: contain;
+    animation: pular-logo 0.4s ease-in-out infinite;
+}
+
+/* Icon 1 na mão */
+.icon-logo-1 {
+    width: 30px;
+    height: 30px;
+    background: url('https://img.icons8.com/?size=100&id=90519&format=png&color=000000') no-repeat center;
+    background-size: contain;
+    animation: pular-logo 0.4s ease-in-out infinite;
+}
+
+/* Icon 2 na mão */
+.icon-logo-2 {
+    width: 30px;
+    height: 30px;
+    background: url('https://img.icons8.com/?size=100&id=9nLaR5KFGjN0&format=png&color=000000') no-repeat center;
+    background-size: contain;
+    animation: pular-logo 0.4s ease-in-out infinite;
+}
+
+@keyframes pular-logo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Animações de corrida em diferentes direções */
+@keyframes correr-ltr {
+    0% {
+        left: -100px;
+        opacity: 1;
+    }
+    100% {
+        left: calc(100vw + 100px);
+        opacity: 1;
+    }
+}
+
+@keyframes correr-rtl {
+    0% {
+        right: -100px;
+        opacity: 1;
+    }
+    100% {
+        right: calc(100vw + 100px);
+        opacity: 1;
+    }
+}
+
+/* Animações com ricochete infinito tipo screensaver */
+@keyframes ricochete-infinito-1 {
+    0% { left: -120px; transform: translateY(0); }
+    25% { left: 25vw; transform: translateY(-20px); }
+    50% { left: 50vw; transform: translateY(10px); }
+    75% { left: 75vw; transform: translateY(-10px); }
+    100% { left: calc(100vw + 120px); transform: translateY(0); }
+}
+
+@keyframes ricochete-infinito-2 {
+    0% { right: -120px; transform: translateY(0); }
+    25% { right: 25vw; transform: translateY(15px); }
+    50% { right: 50vw; transform: translateY(-15px); }
+    75% { right: 75vw; transform: translateY(8px); }
+    100% { right: calc(100vw + 120px); transform: translateY(0); }
+}
+
+@keyframes ricochete-infinito-3 {
+    0% { left: -120px; transform: translateY(0); }
+    20% { left: 30vw; transform: translateY(25px); }
+    40% { left: 50vw; transform: translateY(-20px); }
+    60% { left: 70vw; transform: translateY(15px); }
+    80% { left: 90vw; transform: translateY(-10px); }
+    100% { left: calc(100vw + 120px); transform: translateY(0); }
+}
+
+@keyframes ricochete-infinito-4 {
+    0% { right: -120px; transform: translateY(0); }
+    20% { right: 30vw; transform: translateY(-14px); }
+    40% { right: 50vw; transform: translateY(18px); }
+    60% { right: 70vw; transform: translateY(-12px); }
+    80% { right: 90vw; transform: translateY(10px); }
+    100% { right: calc(100vw + 120px); transform: translateY(0); }
+}
+        top: 100px;
+    }
+    45% {
+        right: 60vw;
+        top: 100px;
+    }
+    50% {
+        left: -100px;
+        right: auto;
+        top: 100px;
+    }
+    65% {
+        left: 25vw;
+        top: 100px;
+    }
+    70% {
+        left: 25vw;
+        top: -35px;
+    }
+    72% {
+        left: 25vw;
+        top: 100px;
+    }
+    85% {
+        left: 50vw;
+        top: 100px;
+    }
+    90% {
+        right: -100px;
+        left: auto;
+        top: 100px;
+    }
+    100% {
+        right: -100px;
+        top: 100px;
+    }
+}
+
+@keyframes ricochete-infinito-3 {
+    0% {
+        left: -100px;
+        top: 150px;
+    }
+    18% {
+        left: 30vw;
+        top: 150px;
+    }
+    23% {
+        left: 30vw;
+        top: -25px;
+    }
+    25% {
+        left: 30vw;
+        top: 150px;
+    }
+    38% {
+        left: calc(100vw + 100px);
+        top: 150px;
+    }
+    43% {
+        right: -100px;
+        left: auto;
+        top: 120px;
+    }
+    62% {
+        right: 22vw;
+        top: 120px;
+    }
+    67% {
+        right: 22vw;
+        top: -45px;
+    }
+    69% {
+        right: 22vw;
+        top: 120px;
+    }
+    83% {
+        right: -100px;
+        top: 120px;
+    }
+    88% {
+        left: -100px;
+        right: auto;
+        top: 150px;
+    }
+    100% {
+        left: -100px;
+        top: 150px;
+    }
+}
+
+@keyframes ricochete-infinito-4 {
+    0% {
+        right: -100px;
+        top: 200px;
+    }
+    22% {
+        right: 28vw;
+        top: 200px;
+    }
+    27% {
+        right: 28vw;
+        top: -50px;
+    }
+    29% {
+        right: 28vw;
+        top: 200px;
+    }
+    42% {
+        left: -100px;
+        right: auto;
+        top: 200px;
+    }
+    57% {
+        left: 35vw;
+        top: 200px;
+    }
+    62% {
+        left: 35vw;
+        top: -30px;
+    }
+    64% {
+        left: 35vw;
+        top: 200px;
+    }
+    80% {
+        right: -100px;
+        left: auto;
+        top: 200px;
+    }
+    100% {
+        right: -100px;
+        top: 200px;
+    }
+}
+
+/* Posições diferentes para cada boneco */
+.boneco-correndo-1 {
+    position: fixed;
+    top: 10vh;
+    left: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+}
+
+.boneco-correndo-1.ativo {
+    animation: ricochete-infinito-1 16s linear infinite;
+}
+
+.boneco-correndo-2 {
+    position: fixed;
+    top: 35vh;
+    right: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+    transform: scaleX(-1);
+}
+
+.boneco-correndo-2.ativo {
+    animation: ricochete-infinito-2 18s linear infinite;
+}
+
+.boneco-correndo-3 {
+    position: fixed;
+    top: 60vh;
+    left: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+}
+
+.boneco-correndo-3.ativo {
+    animation: ricochete-infinito-1 16s linear infinite 2s;
+}
+
+.boneco-correndo-4 {
+    position: fixed;
+    top: 80vh;
+    right: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+    transform: scaleX(-1);
+}
+
+.boneco-correndo-4.ativo {
+    animation: ricochete-infinito-2 18s linear infinite 1s;
+}
+
+.boneco-correndo-5 {
+    position: fixed;
+    top: 25vh;
+    left: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+}
+
+.boneco-correndo-5.ativo {
+    animation: ricochete-infinito-3 17s linear infinite;
+}
+
+.boneco-correndo-6 {
+    position: fixed;
+    top: 50vh;
+    right: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+    transform: scaleX(-1);
+}
+
+.boneco-correndo-6.ativo {
+    animation: ricochete-infinito-4 19s linear infinite 1.5s;
+}
+
+.boneco-correndo-7 {
+    position: fixed;
+    top: 70vh;
+    left: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+}
+
+.boneco-correndo-7.ativo {
+    animation: ricochete-infinito-1 16s linear infinite 3s;
+}
+
+.boneco-correndo-8 {
+    position: fixed;
+    top: 40vh;
+    right: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+    transform: scaleX(-1);
+}
+
+.boneco-correndo-8.ativo {
+    animation: ricochete-infinito-4 19s linear infinite 2.5s;
+}
+
+/* Bonecos na parte de cima */
+.boneco-correndo-topo-1 {
+    position: fixed;
+    top: 5vh;
+    left: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+}
+
+.boneco-correndo-topo-1.ativo {
+    animation: ricochete-infinito-1 16s linear infinite 4s;
+}
+
+.boneco-correndo-topo-2 {
+    position: fixed;
+    top: 20vh;
+    right: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+    transform: scaleX(-1);
+}
+
+.boneco-correndo-topo-2.ativo {
+    animation: ricochete-infinito-2 18s linear infinite 3.5s;
+}
+
+.boneco-correndo-topo-3 {
+    position: fixed;
+    top: 90vh;
+    left: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+}
+
+.boneco-correndo-topo-3.ativo {
+    animation: ricochete-infinito-3 17s linear infinite 5s;
+}
+
+.boneco-correndo-topo-4 {
+    position: fixed;
+    top: 65vh;
+    right: -100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: 999;
+    transform: scaleX(-1);
+}
+
+.boneco-correndo-topo-4.ativo {
+    animation: ricochete-infinito-4 19s linear infinite 4.5s;
 }

@@ -51,7 +51,52 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 function toggleBau() { const bau = document.querySelector('.bau-3d'); if (bau) bau.classList.toggle('aberto'); }
-function toggleBauFixo() { const bau = document.querySelector('.bau-3d-fixo'); if (bau) bau.classList.toggle('aberto'); }
+function toggleBauFixo() {
+    const bau = document.querySelector('.bau-3d-fixo');
+    const bauWrapper = document.querySelector('.bau-fixo');
+    if (bau && bauWrapper) {
+        bau.classList.toggle('aberto');
+        bauWrapper.classList.toggle('aberto');
+        
+        // Se abriu o baú
+        if (bau.classList.contains('aberto')) {
+            // Animar todos os bonecos correndo da parte de baixo
+            for (let i = 1; i <= 8; i++) {
+                const boneco = document.querySelector(`#boneco-correndo-${i}`);
+                if (boneco) {
+                    boneco.classList.remove('ativo');
+                    setTimeout(() => {
+                        boneco.classList.add('ativo');
+                    }, 50);
+                }
+            }
+            // Animar todos os bonecos correndo da parte de cima
+            for (let i = 1; i <= 4; i++) {
+                const boneco = document.querySelector(`#boneco-correndo-topo-${i}`);
+                if (boneco) {
+                    boneco.classList.remove('ativo');
+                    setTimeout(() => {
+                        boneco.classList.add('ativo');
+                    }, 50);
+                }
+            }
+        } else {
+            // Se fechou o baú, parar a animação dos bonecos
+            for (let i = 1; i <= 8; i++) {
+                const boneco = document.querySelector(`#boneco-correndo-${i}`);
+                if (boneco) {
+                    boneco.classList.remove('ativo');
+                }
+            }
+            for (let i = 1; i <= 4; i++) {
+                const boneco = document.querySelector(`#boneco-correndo-topo-${i}`);
+                if (boneco) {
+                    boneco.classList.remove('ativo');
+                }
+            }
+        }
+    }
+}
 
 // Mostrar baú apenas no final do scroll
 window.addEventListener('scroll', () => {
